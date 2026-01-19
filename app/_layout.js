@@ -1,5 +1,4 @@
 import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
 import { AuthProvider } from '../src/store/AuthContext';
 import { PaperProvider } from 'react-native-paper';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
@@ -13,11 +12,9 @@ export default function Layout() {
     <SafeAreaProvider>
       <QueryClientProvider client={queryClient}>
         <PaperProvider>
-          <NavigationContainer>
-            <AuthProvider>
-              <RootNavigator />
-            </AuthProvider>
-          </NavigationContainer>
+          <AuthProvider>
+            <RootNavigator />
+          </AuthProvider>
         </PaperProvider>
       </QueryClientProvider>
     </SafeAreaProvider>
